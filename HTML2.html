@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="img/svg" href="pictures/Logo.svg">
+    <title>Najdi práci online</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bs-extend.css">
+    <link rel="stylesheet" href="sass/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="badge.dropdowns.js" defer></script>
+    <script src="badge.according.js" defer></script>
+
+</head>
+<body>
+<header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container container-fluid">
+        <!-- navbar -->
+        <a class="navbar-brand me-lg-5" href="HTML2.html">
+            <img src="pictures/logo_white.svg" alt="logo" class="d-block" width="140px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item py-2 me-lg-2">
+                    <a class="nav-link" aria-current="page" href="HTML2.html">Home</a>
+                </li>
+                <li class="nav-item py-2 me-lg-2">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item py-2 me-lg-2">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item dropdown fade-down py-2 me-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                        </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="me-lg-2 d-lg-none">
+                    <a type="button" class="nav-link btn btn-primary rounded-5" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Launch demo modal
+                    </a>
+                </li>
+            </ul>
+            <div class="d-flex nav-item">
+                <!-- Button trigger modal -->
+                <button type="button" class="d-none d-lg-block btn btn-primary rounded-pill py-2 me-lg-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Launch demo modal
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="bg-dark pb-4 pt-5">
+    <div class="container py-5">
+            <!-- hero -->
+            <div class="row align-items-center">
+                <div class="col-md-5 order-md-2 mb-4 mb-md-0">
+                <img src="pictures/main_page.svg" alt="hero" class="d-block img-fluid" width="450px">
+                </div>
+                <div class="col-md-7 order-md-1 mb-3">
+                <h1 class="display-2 text-light" style="max-width: 30rem; font-weight: bold;">S námi najdete <span class="text-primary">povolání snů</span></h1>
+                </div>
+            </div>
+        <div>
+            <form class="" id="prace-form">
+                <!-- main form -->
+                <div class="row justify-content-center g-0">
+                    <div class="form-floating col-lg-3 me-sm-3 mb-2 mb-sm-3">
+                        <input type="text" class="form-control" id="obor" placeholder="Jakou práci hledáte?">
+                        <label for="obor"><i class="bi bi-shop"></i> Jakou práci hledáte?</label>
+                    </div>
+                    <div class="form-floating col-lg-3 me-sm-3 mb-2 mb-sm-3">
+                        <input type="text" class="form-control " id="mesto" placeholder="Kde?">
+                        <label for="mesto"><i class="bi bi-geo-alt"></i> Kde?</label>
+                    </div>
+                    <select class="input-group-text col-lg-2 me-sm-3 mb-2 mb-sm-3" name="okoli" id="okoli">
+                        <option selected>Přesná lokalita</option>
+                        <option>v okolí 5 km</option>
+                        <option>v okolí 10 km</option>
+                        <option>v okolí 15 km</option>
+                        <option>v okolí 25 km</option>
+                        <option>v okolí 50 km</option>
+                        <option>v okolí 100 km</option>
+                    </select>
+
+                <!-- Modal Button filtry -->
+                    <button type="button" class="filter-button-show btn btn-light col-lg-3 w-100 me-sm-3 mb-2 mb-sm-3" data-bs-toggle="modal" data-bs-target="#modal-filtry">
+                        <i class="bi bi-gear"></i> Úvazek, mzda, vzdělání...
+                    </button>
+
+                    <button type="submit" class="btn btn-primary col-lg-3 me-sm-3 mb-2 mb-sm-3"><i class="bi bi-search"></i> Najít práci</button>
+                </div>
+                <!-- Modal filtry -->
+                    <div class="modal fade" id="modal-filtry" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Filtry</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <div class="accordion">
+                                    <!-- cas zverejneni according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-cas-zverejneni" aria-expanded="false" aria-controls="according-cas-zverejneni">
+                                                    Čas zveřejnění<span class="ms-2 badge bg-primary" id="according-badge-cas-zverejeneni" style="display: none;">1</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-cas-zverejneni" class="accordion-collapse collapse" data-bs-parent="#according-badge-cas-zverejeneni">
+                                                <div class="accordion-body">
+                                                    <h3>Čas zveřejnění</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="cas-zverejneni" id="according-cas-nezalezi" checked>
+                                                            <label class="form-check-label w-100" for="according-cas-nezalezi">Nezáleží</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                        <input class="form-check-input" type="radio"  name="cas-zverejneni" id="according-cas-24-h">
+                                                            <label class="form-check-label w-100" for="according-cas-24-h">Posledních 24 hodin</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="cas-zverejneni" id="according-cas-3-dny">
+                                                            <label class="form-check-label w-100" for="according-cas-3-dny">Poslední 3 dny</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="cas-zverejneni" id="according-cas-posledny-tyden">
+                                                            <label class="form-check-label w-100" for="according-cas-posledny-tyden">Poslední týden</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- mzda according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-mzda" aria-expanded="false" aria-controls="according-mzda">
+                                                    Mzda<span class="ms-2 badge bg-primary" id="according-badge-mzda" style="display: none;">1</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-mzda" class="accordion-collapse collapse" data-bs-parent="#according-badge-mzda">
+                                                <div class="accordion-body">
+                                                    <h3>Hrubá mzda</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">Od
+                                                            <label class="form-check-label ms-1 me-1" for="according-plat-od">
+                                                                <input class="form-control fs-4" type="number" min="0" max="200000" step="1000" name="plat-number" id="according-plat-od" value="0">
+                                                            </label>Kč
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <select class="form-select fs-4">
+                                                                <option id="according-kc-mesic">Kč/měsíc</option>
+                                                                <option id="according-kc-hod">Kč/hod</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- Typ uvazku according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-typ-uvazku" aria-expanded="false" aria-controls="according-typ-uvazku">
+                                                    Typ úvazku<span class="ms-2 badge bg-primary" id="according-badge-typ-uvazku" style="display: none;">0</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-typ-uvazku" class="accordion-collapse collapse" data-bs-parent="#according-badge-typ-uvazku">
+                                                <div class="accordion-body">
+                                                    <h3>Úvazek</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="uvazek" id="according-plny-uvazek">
+                                                            <label class="form-check-label w-100" for="according-plny-uvazek">Plný úvazek</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="uvazek" id="according-zkraceny-uvazek">
+                                                            <label class="form-check-label w-100" for="according-zkraceny-uvazek">Zkrácený úvazek</label>
+                                                        </div>
+                                                    </div>
+                                                    <h3>Typ spolupráce</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="uvazek" id="according-pracovni-smlouva">
+                                                            <label class="form-check-label w-100" for="according-pracovni-smlouva">Pracovní smlouva (HPP/VPP)</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="uvazek" id="according-prace-zivnostensky-list">
+                                                            <label class="form-check-label w-100" for="according-prace-zivnostensky-list">Práce na živnostenský list</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="uvazek" id="according-prace-dohodou">
+                                                            <label class="form-check-label w-100" for="according-prace-dohodou">Práce na dohodu (DPP/DPČ)</label>
+                                                        </div>
+                                                    </div>
+                                                    <h3>Stáže</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="uvazek" id="according-staze">
+                                                            <label class="form-check-label w-100" for="according-staze">Stáže, praxe a trainee programy</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- vzdelani according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-vzdelani" aria-expanded="false" aria-controls="according-vzdelani">
+                                                    Minimální vzdělání<span class="ms-2 badge bg-primary" id="according-badge-vzdelani" style="display: none;">1</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-vzdelani" class="accordion-collapse collapse" data-bs-parent="#according-badge-vzdelani">
+                                                <div class="accordion-body">
+                                                    <h3>Vyžadováné vzdělání</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-nezalezi" checked>
+                                                            <label class="form-check-label w-100" for="according-vzdelani-nezalezi">Nezáleží</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-bez">
+                                                            <label class="form-check-label w-100" for="according-vzdelani-bez">Bez vzdělání</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-zakladni">
+                                                            <label class="form-check-label w-100" for="according-vzdelani-zakladni">Základní</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-vyucen">
+                                                            <label class="form-check-label w-100" for="according-vzdelani-vyucen">Vyučen</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-maturita">
+                                                            <label class="form-check-label w-100" for="according-vzdelani-maturita">Maturita</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-vysoka">
+                                                            <label class="form-check-label w-100" for="according-vzdelani-vysoka">Vysoká škola</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="vzdelani" id="according-vzdelani-nezadano">
+                                                            <label class="form-check-label w-100" for="according-vzdelani-nezadano">Nezadáno</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- smennost according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-smennost" aria-expanded="false" aria-controls="according-smennost">
+                                                    Směnnost<span class="ms-2 badge bg-primary" id="according-badge-smennost" style="display: none;">0</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-smennost" class="accordion-collapse collapse" data-bs-parent="#according-badge-smennost">
+                                                <div class="accordion-body">
+                                                    <h3>Typ směnného provozu</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-jednosmenny-provoz">
+                                                            <label class="form-check-label w-100" for="according-smennost-jednosmenny-provoz">Jednosměnný provoz</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-dvousmenny-provoz" >
+                                                            <label class="form-check-label w-100" for="according-smennost-dvousmenny-provoz">Dvousměnný provoz</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-trismenny-provoz" >
+                                                            <label class="form-check-label w-100" for="according-smennost-trismenny-provoz">Třísměnný provoz</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-ctyrsmenny-provoz" >
+                                                            <label class="form-check-label w-100" for="according-smennost-ctyrsmenny-provoz">Čtyřsměnný provoz</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-delene-smeny" >
+                                                            <label class="form-check-label w-100" for="according-smennost-delene-smeny">Dělené směny</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-nepretrzity-provoz" >
+                                                            <label class="form-check-label w-100" for="according-smennost-nepretrzity-provoz">Nepřetržitý provoz</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-nocni-provoz" >
+                                                            <label class="form-check-label w-100" for="according-smennost-nocni-provoz">Noční provoz</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-pruzna-prac-doba" >
+                                                            <label class="form-check-label w-100" for="according-smennost-pruzna-prac-doba">Pružná pracovní doba</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-turnusove-sluzby" >
+                                                            <label class="form-check-label w-100" for="according-smennost-turnusove-sluzby">Turnusové služby</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="smennost" id="according-smennost-neurceno" >
+                                                            <label class="form-check-label w-100" for="according-smennost-neurceno">Neurčeno</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- jazyky according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-jazyky" aria-expanded="false" aria-controls="according-jazyky">
+                                                    Požadované jazyky<span class="ms-2 badge bg-primary" id="according-badge-jazyky" style="display: none;">0</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-jazyky" class="accordion-collapse collapse" data-bs-parent="#according-badge-jazyky">
+                                                <div class="accordion-body">
+                                                    <h3>Požadované jazyky</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-cestina">
+                                                            <label class="form-check-label w-100" for="according-cestina">Jen čeština</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-anglictina">
+                                                            <label class="form-check-label w-100" for="according-anglictina">Angličtina</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-nemcina">
+                                                            <label class="form-check-label w-100" for="according-nemcina">Němčina</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-francouzstina">
+                                                            <label class="form-check-label w-100" for="according-francouzstina">Francouzština</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-rustina">
+                                                            <label class="form-check-label w-100" for="according-rustina">Ruština</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-polstina">
+                                                            <label class="form-check-label w-100" for="according-polstina">Polština</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-italstina">
+                                                            <label class="form-check-label w-100" for="according-italstina">Italština</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="jazyky" id="according-spanelstina">
+                                                            <label class="form-check-label w-100" for="according-spanelstina">Španělština</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- home office according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-home" aria-expanded="false" aria-controls="according-home">
+                                                    Práce z domova<span class="ms-2 badge bg-primary" id="according-badge-home" style="display: none;">1</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-home" class="accordion-collapse collapse" data-bs-parent="#according-badge-home">
+                                                <div class="accordion-body">
+                                                    <h3>Práce z domova</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="home-office" id="according-home-nezalezi" checked>
+                                                            <label class="form-check-label w-100" for="according-home-nezalezi">Nezáleží</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="home-office" id="according-home-moznost">
+                                                            <label class="form-check-label w-100" for="according-home-moznost">Možnost práce z domova</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="home-office" id="according-home-prevazne">
+                                                            <label class="form-check-label w-100" for="according-home-prevazne">Práce převážně z domova</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="home-office" id="according-home-flexibilni">
+                                                            <label class="form-check-label w-100" for="according-home-flexibilni">Flexibilní pracovní doba</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- zadatel according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-zadavatel" aria-expanded="false" aria-controls="according-zadavatel">
+                                                    Zadavatel<span class="ms-2 badge bg-primary" id="according-badge-zadavatel" style="display: none;">1</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-zadavatel" class="accordion-collapse collapse" data-bs-parent="#according-badge-zadavatel">
+                                                <div class="accordion-body">
+                                                    <h3>Zadavatel</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="zadavatel" id="according-zadavatel-nezalezi" checked>
+                                                            <label class="form-check-label w-100" for="according-zadavatel-nezalezi">Nezáleží</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="zadavatel" id="according-zadavatel-primy">
+                                                            <label class="form-check-label w-100" for="according-zadavatel-primy">Přímý zaměstnavatel</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="zadavatel" id="according-zadavatel-agentura">
+                                                            <label class="form-check-label w-100" for="according-zadavatel-agentura">Agentura</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="zadavatel" id="according-zadavatel-neziskovka">
+                                                            <label class="form-check-label w-100" for="according-zadavatel-neziskovka">Neziskovka</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- vhodne i pro according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-vhodne" aria-expanded="false" aria-controls="according-vhodne">
+                                                    Vhodné i pro<span class="ms-2 badge bg-primary" id="according-badge-vhodne" style="display: none;">0</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-vhodne" class="accordion-collapse collapse" data-bs-parent="#according-badge-vhodne">
+                                                <div class="accordion-body">
+                                                    <h3>Vhodné i pro</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-absolventi-stredni">
+                                                            <label class="form-check-label w-100" for="according-vhodne-absolventi-stredni">Absolventi středních škol</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-absolventi-vysoka">
+                                                            <label class="form-check-label w-100" for="according-vhodne-absolventi-vysoka">Absolventi vysokých škol</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-mladistve">
+                                                            <label class="form-check-label w-100" for="according-vhodne-mladistve">Mladistvé uchazeče</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-ozp">
+                                                            <label class="form-check-label w-100" for="according-vhodne-ozp">Osoby se zdravotním postižením (OZP)</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-bezbarierovy">
+                                                            <label class="form-check-label w-100" for="according-vhodne-bezbarierovy">Osoby vyžadující bezbariérový přístup</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-duchodci">
+                                                            <label class="form-check-label w-100" for="according-vhodne-duchodci">Důchodci</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="vhodne" id="according-vhodne-na-rodicovske">
+                                                            <label class="form-check-label w-100" for="according-vhodne-na-rodicovske">Na rodičovské</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- cizinci according -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#according-cizinci" aria-expanded="false" aria-controls="according-cizinci">
+                                                    Souhlas se zaměstnáním cizinců<span class="ms-2 badge bg-primary" id="according-badge-cizinci" style="display: none;">0</span>
+                                                </button>
+                                            </h2>
+                                            <div id="according-cizinci" class="accordion-collapse collapse" data-bs-parent="#according-badge-cizinci">
+                                                <div class="accordion-body">
+                                                    <h3>Vhodné</h3>
+                                                    <div class="fs-4 p-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="cizinci" id="according-cizinci-cizinci">
+                                                            <label class="form-check-label w-100" for="according-cizinci-cizinci">Pro cizince</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="cizinci" id="according-cizinci-zamestnanecka-karta">
+                                                            <label class="form-check-label w-100" for="according-cizinci-zamestnanecka-karta">Pro držitele zaměstnanecké karty</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="cizinci" id="according-cizinci-modra-karty">
+                                                            <label class="form-check-label w-100" for="according-cizinci-modra-karty">Pro držitele modré karty</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="cizinci" id="according-cizinci-azylanti">
+                                                            <label class="form-check-label w-100" for="according-cizinci-azylanti">Pro azylanty</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="submit" class="btn btn-primary w-100 fs-5"><i class="bi bi-search"></i> Najít práci</button>
+                                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Zavřít</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="d-flex flex-column justify-content-start flex-lg-row flex-wrap w-100">
+                <!-- cas zverejneni dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                        <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                        Čas zveřejnění<span class="ms-2 badge bg-primary" id="dropdown-badge-cas-zverejeneni" style="display: none;">1</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Čas zveřejnění</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cas-nezalezi">
+                                    <input class="form-check-input" type="radio" name="cas-zverejneni" id="cas-nezalezi" checked>
+                                    Nezáleží</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cas-24-h">
+                                    <input class="form-check-input" type="radio"  name="cas-zverejneni" id="cas-24-h">
+                                    Posledních 24 hodin</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cas-3-dny">
+                                    <input class="form-check-input" type="radio" name="cas-zverejneni" id="cas-3-dny">
+                                    Poslední 3 dny</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cas-posledny-tyden">
+                                    <input class="form-check-input" type="radio" name="cas-zverejneni" id="cas-posledny-tyden">
+                                    Poslední týden</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- mzda dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                            <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mzda<span class="ms-2 badge bg-primary" id="dropdown-badge-mzda" style="display: none;">1</span>
+                            </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Hrubá mzda</h3></li>
+                            <div>
+                                <li>
+                                    <div class="dropdown-item ps-2 pe-5">
+                                        Od
+                                            <label class="form-check-label me-1 ms-1" for="plat-od">
+                                                <input type="number" class="form-control" min="0" max="200000" step="1000" name="plat-number" id="plat-od" value="0">
+                                            </label>
+                                        Kč
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item">
+                                        <select class="form-select">
+                                            <option id="kc-mesic">Kč/měsíc</option>
+                                            <option id="kc-hod">Kč/hod</option>
+                                        </select>
+                                    </span>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- Typ uvazku dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                            <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Typ úvazku<span class="ms-2 badge bg-primary" id="dropdown-badge-typ-uvazku" style="display: none;"></span>
+                            </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Úvazek</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="plny-uvazek">
+                                    <input class="form-check-input" type="checkbox" name="uvazek" id="plny-uvazek">
+                                    Plný úvazek</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="zkraceny-uvazek">
+                                    <input class="form-check-input" type="checkbox" name="uvazek" id="zkraceny-uvazek">
+                                    Zkrácený úvazek</label>
+                                </li>
+                            </div>
+                                <li><h3 class="dropdown-header">Typ spolupráce</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="pracovni-smlouva">
+                                    <input class="form-check-input" type="checkbox" name="uvazek" id="pracovni-smlouva">
+                                    Pracovní smlouva (HPP/VPP)</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="prace-zivnostensky-list">
+                                    <input class="form-check-input" type="checkbox" name="uvazek" id="prace-zivnostensky-list">
+                                    Práce na živnostenský list</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="prace-dohodou">
+                                    <input class="form-check-input" type="checkbox" name="uvazek" id="prace-dohodou">
+                                    Práce na dohodu (DPP/DPČ)</label>
+                                </li>
+                            </div>
+                                <li><h3 class="dropdown-header">Stáže</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="staze">
+                                    <input class="form-check-input" type="checkbox" name="uvazek" id="staze">
+                                    Stáže, praxe a trainee programy</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- vzdelani dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                            <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Minimální vzdělání<span class="ms-2 badge bg-primary" id="dropdown-badge-vzdelani" style="display: none;">1</span>
+                            </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Vyžadováné vzdělání</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vzdelani-nezalezi">
+                                    <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-nezalezi" checked>
+                                    Nezáleží</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vzdelani-bez">
+                                    <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-bez">
+                                    Bez vzdělání</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vzdelani-zakladni">
+                                        <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-zakladni">
+                                    Základní</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vzdelani-vyucen">
+                                        <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-vyucen">
+                                    Vyučen</label>
+                                </li>
+                                <li>
+                                <label class="form-check-label dropdown-item" for="vzdelani-maturita">
+                                    <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-maturita">
+                                    Maturita</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vzdelani-vysoka">
+                                    <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-vysoka">
+                                    Vysoká škola</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vzdelani-nezadano">
+                                        <input class="form-check-input" type="radio" name="vzdelani" id="vzdelani-nezadano">
+                                    Nezadáno</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- smennost dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                        <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Směnnost<span class="ms-2 badge bg-primary" id="dropdown-badge-smennost" style="display: none;">0</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><h3 class="dropdown-header">Typ směnného provozu</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-jednosmenny-provoz">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-jednosmenny-provoz">
+                                    Jednosměnný provoz</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-dvousmenny-provoz">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-dvousmenny-provoz" >
+                                    Dvousměnný provoz</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-trismenny-provoz">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-trismenny-provoz" >
+                                    Třísměnný provoz</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-ctyrsmenny-provoz">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-ctyrsmenny-provoz" >
+                                    Čtyřsměnný provoz</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-delene-smeny">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-delene-smeny" >
+                                    Dělené směny</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-nepretrzity-provoz">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-nepretrzity-provoz" >
+                                    Nepřetržitý provoz</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-nocni-provoz">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-nocni-provoz" >
+                                    Noční provoz</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-pruzna-prac-doba">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-pruzna-prac-doba" >
+                                    Pružná pracovní doba</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-turnusove-sluzby">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-turnusove-sluzby" >
+                                    Turnusové služby</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="smennost-neurceno">
+                                        <input class="form-check-input" type="checkbox" name="smennost" id="smennost-neurceno" >
+                                    Neurčeno</label>
+                                </li>
+
+                            </div>
+                        </ul>
+                    </div>
+                <!-- jazyky dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                            <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                                Požadované jazyky<span class="ms-2 badge bg-primary" id="dropdown-badge-jazyky" style="display: none;">0</span>
+                            </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Požadované jazyky</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cestina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="cestina">
+                                    Jen čeština</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="anglictina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="anglictina">
+                                    Angličtina</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="nemcina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="nemcina">
+                                    Němčina</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="francouzstina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="francouzstina">
+                                    Francouzština</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="rustina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="rustina">
+                                    Ruština</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="polstina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="polstina">
+                                    Polština</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="italstina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="italstina">
+                                    Italština</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="spanelstina">
+                                    <input class="form-check-input" type="checkbox" name="jazyky" id="spanelstina">
+                                    Španělština</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- home office dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                            <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                                Práce z domova<span class="ms-2 badge bg-primary" id="dropdown-badge-home" style="display: none;">1</span>
+                            </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Práce z domova</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="home-nezalezi">
+                                    <input class="form-check-input" type="radio" name="home-office" id="home-nezalezi" checked>
+                                    Nezáleží</label>
+                                </li>
+                                <li>
+                                   <label class="form-check-label dropdown-item" for="home-moznost">
+                                   <input class="form-check-input" type="radio" name="home-office" id="home-moznost">
+                                   Možnost práce z domova</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="home-prevazne">
+                                    <input class="form-check-input" type="radio" name="home-office" id="home-prevazne">
+                                    Práce převážně z domova</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="home-flexibilni">
+                                    <input class="form-check-input" type="radio" name="home-office" id="home-flexibilni">
+                                    Flexibilní pracovní doba</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- zadatel dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                        <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Zadavatel<span class="ms-2 badge bg-primary" id="dropdown-badge-zadavatel" style="display: none;">1</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><h3 class="dropdown-header">Zadavatel</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="zadavatel-nezalezi">
+                                    <input class="form-check-input" type="radio" name="zadavatel" id="zadavatel-nezalezi" checked>
+                                    Nezáleží</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="zadavatel-primy">
+                                    <input class="form-check-input" type="radio" name="zadavatel" id="zadavatel-primy">
+                                    Přímý zaměstnavatel</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="zadavatel-agentura">
+                                    <input class="form-check-input" type="radio" name="zadavatel" id="zadavatel-agentura">
+                                    Agentura</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="zadavatel-neziskovka">
+                                    <input class="form-check-input" type="radio" name="zadavatel" id="zadavatel-neziskovka">
+                                    Neziskovka</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- vhodne i pro dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                        <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vhodné i pro<span class="ms-2 badge bg-primary" id="dropdown-badge-vhodne" style="display: none;">0</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><h3 class="dropdown-header">Vhodné i pro</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-absolventi-stredni">
+                                    <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-absolventi-stredni">
+                                    Absolventi středních škol</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-absolventi-vysoka">
+                                        <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-absolventi-vysoka">
+                                    Absolventi vysokých škol</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-mladistve">
+                                        <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-mladistve">
+                                    Mladistvé uchazeče</label>
+                                </li>
+
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-ozp">
+                                        <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-ozp">
+                                        Osoby se zdravotním postižením (OZP)</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-bezbarierovy">
+                                        <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-bezbarierovy">
+                                        Osoby vyžadující bezbariérový přístup</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-duchodci">
+                                    <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-duchodci">
+                                    Důchodci</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="vhodne-na-rodicovske">
+                                        <input class="form-check-input" type="checkbox" name="vhodne" id="vhodne-na-rodicovske">
+                                    Na rodičovské</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                <!-- cizinci dropdown -->
+                    <div class="dropdown me-sm-4 mb-2 mb-sm-3 filter-dropdown-show">
+                        <a class="btn btn-dark dropdown-toggle w-100" href="#" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                            Souhlas se zaměstnáním cizinců<span class="ms-2 badge bg-primary" id="dropdown-badge-cizinci" style="display: none;">0</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><h3 class="dropdown-header">Vhodné</h3></li>
+                            <div>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cizinci-cizinci">
+                                        <input class="form-check-input" type="checkbox" name="cizinci" id="cizinci-cizinci">
+                                    Pro cizince</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cizinci-zamestnanecka-karta">
+                                        <input class="form-check-input" type="checkbox" name="cizinci" id="cizinci-zamestnanecka-karta">
+                                    Pro držitele zaměstnanecké karty</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cizinci-modra-karty">
+                                        <input class="form-check-input" type="checkbox" name="cizinci" id="cizinci-modra-karty">
+                                    Pro držitele modré karty</label>
+                                </li>
+                                <li>
+                                    <label class="form-check-label dropdown-item" for="cizinci-azylanti">
+                                        <input class="form-check-input" type="checkbox" name="cizinci" id="cizinci-azylanti">
+                                    Pro azylanty</label>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="bg-light pt-md-3 rounded-xxl-4" style="margin-top: -30px;">
+    <div class="container" style="height:10000px">
+        <div class="pt-4 d-flex flex-row align-self-center">
+            <h2 class="flex-fill">
+                Nabídky, které byste sami neobjevili:
+            </h2>
+            <label class="form-label" for="relevance">Seřadit podle:
+            <select class="input-group-text" form="prace-form" id="relevance">
+                <option>relevance</option>
+                <option>data zveřejnění</option>
+                <option>názvu profese</option>
+            </select>
+            </label>
+        </div>
+        <hr>
+        <!-- inzerát -->
+            <div class="bg-light card rounded-3">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <a href="inzerat.vzor.html" class="link-primary card-title card-link">
+                                    <h5 class="fs-2">Název práce</h5>
+                                </a>
+                            </div>
+                <!-- inzerát zveřejněno -->
+                            <div class="col-md-2 float-end fs-6">
+                                <p>
+                                    Zveřejněno:
+                                    <span>
+                                        30.&nbsp;1.&nbsp;2021
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <!-- inzerát text -->
+                    <p class="card-text ms-3 fs-5">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua
+                        . Eget est lorem ipsum dolor sit
+                    </p>
+                    <div class="container">
+                        <div class="row">
+                <!-- inzerát místo -->
+                            <div class="col-md-4">
+                                <h3 class="fs-4">
+                                    <i class="bi bi-geo-alt me-2"></i>
+                                    <span>
+                                        Písek
+                                    </span>
+                                </h3>
+                            </div>
+                <!-- inzerát škola -->
+                            <div class="col-md-4">
+                                <h3 class="fs-4">
+                                    <i class="bi bi-bank me-2"></i>
+                                    <span>
+                                        Vysoká škola života
+                                    </span>
+                                </h3>
+                            </div>
+                <!-- inzerát mzda -->
+                            <div class="col-md-4">
+                                <h3 class="fs-4">
+                                    <i class="bi bi-cash-stack me-2"></i>
+                                    <span>
+                                        od 15&nbsp;000 do 30&nbsp;000&nbsp;Kč/měsíc
+                                    </span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <hr>
+    </div>
+</section>
+</body>
+</html>

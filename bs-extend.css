@@ -1,0 +1,77 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 10 version
+*/
+*{
+    font-family: Calibri, Helvetica, sans-serif !important;
+}
+.dropdown-menu-light-dark{
+    color: #dee2e6;
+    background-color: #343a40;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+.btn-primary {
+    color: #fff !important;
+}
+.rounded-4{
+    border-radius: .5rem !important;
+}
+.rounded-5{
+    border-radius: .75rem !important;
+}
+.rounded-xxl-4 {
+    border-radius: 1.875rem !important;
+}
+@media (max-width: 991.98px) {
+    .filter-dropdown-show{
+        display: none !important;
+    }
+    .navbar-nav .nav-item{
+        margin-bottom: .375rem !important;
+        padding: .125rem 1rem !important;
+        border: 1px solid #6c757d !important;
+        border-radius: .75rem !important;
+    }}
+@media only screen and (min-width: 991.98px){
+    .filter-button-show{
+        display: none !important;
+    }
+    .nav-item .dropdown-menu {
+        display: block !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        -webkit-transition: .3s !important;
+        -o-transition: .3s !important;
+        transition: .3s !important;
+        margin-top: 0 !important;
+    }
+
+    .nav-item:hover .nav-link {
+        color: #fff !important;
+    }
+
+    .dropdown-menu-dark .fade-down {
+        top: 80% !important;
+        -webkit-transform: rotateX(-75deg) !important;
+        transform: rotateX(-75deg) !important;
+        -webkit-transform-origin: 0 0 !important;
+        -ms-transform-origin: 0 0 !important;
+        transform-origin: 0 0 !important;
+    }
+    .dropdown-menu .fade-up {
+        top: 180% !important;
+    }
+
+    .nav-item:hover .dropdown-menu {
+        -webkit-transition: .3s !important;
+        -o-transition: .3s !important;
+        transition: .3s !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        top: 80% !important;
+        -webkit-transform: rotateX(0deg) !important;
+        transform: rotateX(0deg) !important;
+    }
+}
